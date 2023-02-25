@@ -33,8 +33,9 @@
             label2 = new Label();
             chkIncludeUpper = new CheckBox();
             textBox2 = new TextBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
+            chkIncludeNumers = new CheckBox();
+            chkIncludeLower = new CheckBox();
+            ckhSymbols = new CheckBox();
             SuspendLayout();
             // 
             // textBox1
@@ -75,7 +76,7 @@
             chkIncludeUpper.Size = new Size(178, 27);
             chkIncludeUpper.TabIndex = 3;
             chkIncludeUpper.Text = "Include Uppercase";
-            chkIncludeUpper.TextAlign = ContentAlignment.MiddleRight;
+            chkIncludeUpper.TextAlign = ContentAlignment.MiddleCenter;
             chkIncludeUpper.UseVisualStyleBackColor = true;
             // 
             // textBox2
@@ -85,31 +86,45 @@
             textBox2.Size = new Size(140, 30);
             textBox2.TabIndex = 4;
             // 
-            // checkBox1
+            // chkIncludeNumers
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.CheckAlign = ContentAlignment.MiddleRight;
-            checkBox1.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(250, 521);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(178, 27);
-            checkBox1.TabIndex = 5;
-            checkBox1.Text = "Include Uppercase";
-            checkBox1.TextAlign = ContentAlignment.MiddleRight;
-            checkBox1.UseVisualStyleBackColor = true;
+            chkIncludeNumers.AutoSize = true;
+            chkIncludeNumers.CheckAlign = ContentAlignment.MiddleRight;
+            chkIncludeNumers.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
+            chkIncludeNumers.Location = new Point(250, 521);
+            chkIncludeNumers.Name = "chkIncludeNumers";
+            chkIncludeNumers.Size = new Size(168, 27);
+            chkIncludeNumers.TabIndex = 5;
+            chkIncludeNumers.Text = "Include Numbers";
+            chkIncludeNumers.TextAlign = ContentAlignment.MiddleRight;
+            chkIncludeNumers.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkIncludeLower
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.CheckAlign = ContentAlignment.MiddleRight;
-            checkBox2.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox2.Location = new Point(250, 462);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(178, 27);
-            checkBox2.TabIndex = 6;
-            checkBox2.Text = "Include Uppercase";
-            checkBox2.TextAlign = ContentAlignment.MiddleRight;
-            checkBox2.UseVisualStyleBackColor = true;
+            chkIncludeLower.AutoSize = true;
+            chkIncludeLower.CheckAlign = ContentAlignment.MiddleRight;
+            chkIncludeLower.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
+            chkIncludeLower.Location = new Point(250, 462);
+            chkIncludeLower.Name = "chkIncludeLower";
+            chkIncludeLower.Size = new Size(177, 27);
+            chkIncludeLower.TabIndex = 6;
+            chkIncludeLower.Text = "Include Lowercase";
+            chkIncludeLower.TextAlign = ContentAlignment.MiddleRight;
+            chkIncludeLower.UseVisualStyleBackColor = true;
+            // 
+            // ckhSymbols
+            // 
+            ckhSymbols.AutoSize = true;
+            ckhSymbols.CheckAlign = ContentAlignment.MiddleRight;
+            ckhSymbols.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
+            ckhSymbols.ImageAlign = ContentAlignment.MiddleRight;
+            ckhSymbols.Location = new Point(250, 580);
+            ckhSymbols.Name = "ckhSymbols";
+            ckhSymbols.Size = new Size(163, 27);
+            ckhSymbols.TabIndex = 7;
+            ckhSymbols.Text = "Include Symbols";
+            ckhSymbols.TextAlign = ContentAlignment.MiddleRight;
+            ckhSymbols.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -117,8 +132,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1036, 721);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(ckhSymbols);
+            Controls.Add(chkIncludeLower);
+            Controls.Add(chkIncludeNumers);
             Controls.Add(textBox2);
             Controls.Add(chkIncludeUpper);
             Controls.Add(label2);
@@ -137,7 +153,8 @@
         private Label label2;
         private CheckBox chkIncludeUpper;
         private TextBox textBox2;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
+        private CheckBox chkIncludeNumers;
+        private CheckBox chkIncludeLower;
+        private CheckBox ckhSymbols;
     }
 }
