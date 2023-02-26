@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtPassResult = new TextBox();
             label1 = new Label();
             label2 = new Label();
             chkIncludeUpper = new CheckBox();
-            textBox2 = new TextBox();
+            txtLength = new TextBox();
             chkIncludeNumers = new CheckBox();
             chkIncludeLower = new CheckBox();
-            ckhSymbols = new CheckBox();
+            chkSymbols = new CheckBox();
+            btnGenerate = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtPassResult
             // 
-            textBox1.Location = new Point(129, 100);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(730, 168);
-            textBox1.TabIndex = 0;
+            txtPassResult.Enabled = false;
+            txtPassResult.Location = new Point(194, 100);
+            txtPassResult.Multiline = true;
+            txtPassResult.Name = "txtPassResult";
+            txtPassResult.Size = new Size(730, 168);
+            txtPassResult.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 16.1194019F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(318, 39);
+            label1.Location = new Point(383, 39);
             label1.Name = "label1";
             label1.Size = new Size(352, 35);
             label1.TabIndex = 1;
@@ -60,7 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(218, 322);
+            label2.Location = new Point(564, 335);
             label2.Name = "label2";
             label2.Size = new Size(180, 30);
             label2.TabIndex = 2;
@@ -71,27 +73,27 @@
             chkIncludeUpper.AutoSize = true;
             chkIncludeUpper.CheckAlign = ContentAlignment.MiddleRight;
             chkIncludeUpper.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            chkIncludeUpper.Location = new Point(250, 405);
+            chkIncludeUpper.Location = new Point(746, 391);
             chkIncludeUpper.Name = "chkIncludeUpper";
             chkIncludeUpper.Size = new Size(178, 27);
             chkIncludeUpper.TabIndex = 3;
             chkIncludeUpper.Text = "Include Uppercase";
-            chkIncludeUpper.TextAlign = ContentAlignment.MiddleCenter;
+            chkIncludeUpper.TextAlign = ContentAlignment.MiddleRight;
             chkIncludeUpper.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtLength
             // 
-            textBox2.Location = new Point(488, 322);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(140, 30);
-            textBox2.TabIndex = 4;
+            txtLength.Location = new Point(784, 335);
+            txtLength.Name = "txtLength";
+            txtLength.Size = new Size(140, 30);
+            txtLength.TabIndex = 4;
             // 
             // chkIncludeNumers
             // 
             chkIncludeNumers.AutoSize = true;
             chkIncludeNumers.CheckAlign = ContentAlignment.MiddleRight;
             chkIncludeNumers.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            chkIncludeNumers.Location = new Point(250, 521);
+            chkIncludeNumers.Location = new Point(756, 507);
             chkIncludeNumers.Name = "chkIncludeNumers";
             chkIncludeNumers.Size = new Size(168, 27);
             chkIncludeNumers.TabIndex = 5;
@@ -104,7 +106,7 @@
             chkIncludeLower.AutoSize = true;
             chkIncludeLower.CheckAlign = ContentAlignment.MiddleRight;
             chkIncludeLower.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            chkIncludeLower.Location = new Point(250, 462);
+            chkIncludeLower.Location = new Point(747, 448);
             chkIncludeLower.Name = "chkIncludeLower";
             chkIncludeLower.Size = new Size(177, 27);
             chkIncludeLower.TabIndex = 6;
@@ -112,34 +114,46 @@
             chkIncludeLower.TextAlign = ContentAlignment.MiddleRight;
             chkIncludeLower.UseVisualStyleBackColor = true;
             // 
-            // ckhSymbols
+            // chkSymbols
             // 
-            ckhSymbols.AutoSize = true;
-            ckhSymbols.CheckAlign = ContentAlignment.MiddleRight;
-            ckhSymbols.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            ckhSymbols.ImageAlign = ContentAlignment.MiddleRight;
-            ckhSymbols.Location = new Point(250, 580);
-            ckhSymbols.Name = "ckhSymbols";
-            ckhSymbols.Size = new Size(163, 27);
-            ckhSymbols.TabIndex = 7;
-            ckhSymbols.Text = "Include Symbols";
-            ckhSymbols.TextAlign = ContentAlignment.MiddleRight;
-            ckhSymbols.UseVisualStyleBackColor = true;
+            chkSymbols.AutoSize = true;
+            chkSymbols.CheckAlign = ContentAlignment.MiddleRight;
+            chkSymbols.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
+            chkSymbols.ImageAlign = ContentAlignment.MiddleRight;
+            chkSymbols.Location = new Point(761, 566);
+            chkSymbols.Name = "chkSymbols";
+            chkSymbols.Size = new Size(163, 27);
+            chkSymbols.TabIndex = 7;
+            chkSymbols.Text = "Include Symbols";
+            chkSymbols.TextAlign = ContentAlignment.MiddleRight;
+            chkSymbols.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGenerate.Location = new Point(482, 662);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(155, 47);
+            btnGenerate.TabIndex = 8;
+            btnGenerate.Text = "Generate";
+            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.Click += btnGenerate_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(1036, 721);
-            Controls.Add(ckhSymbols);
+            ClientSize = new Size(1155, 731);
+            Controls.Add(btnGenerate);
+            Controls.Add(chkSymbols);
             Controls.Add(chkIncludeLower);
             Controls.Add(chkIncludeNumers);
-            Controls.Add(textBox2);
+            Controls.Add(txtLength);
             Controls.Add(chkIncludeUpper);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassResult);
             Name = "Form1";
             Text = "Password Generator";
             ResumeLayout(false);
@@ -148,13 +162,14 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtPassResult;
         private Label label1;
         private Label label2;
         private CheckBox chkIncludeUpper;
-        private TextBox textBox2;
+        private TextBox txtLength;
         private CheckBox chkIncludeNumers;
         private CheckBox chkIncludeLower;
-        private CheckBox ckhSymbols;
+        private CheckBox chkSymbols;
+        private Button btnGenerate;
     }
 }
