@@ -3,10 +3,10 @@ namespace PasswordGenerator
     public partial class Form1 : Form
     {
         Random _ramdom = new Random();
-        static string upperCaseList = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-        static string lowerList = "abcdefghijklmnñopqrstuvwxyz";
-        static string numberList = "0123456789";
-        static string symbolList = "!¡@#$%&/*+()[]{}=<>,;:.~^";
+        static readonly string upperCaseList = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        static readonly string lowerList = "abcdefghijklmnñopqrstuvwxyz";
+        static readonly string numberList = "0123456789";
+        static readonly string symbolList = "!¡@#$%&/*+()[]{}=<>,;:.~^";
 
         string allCharsList = string.Empty;
         public Form1()
@@ -15,19 +15,19 @@ namespace PasswordGenerator
             txtLength.Text = "20";
         }
 
-
+        //iniciando con la verificación de los check si son habilitados, de lo contrario se crea un password por defecto con todas las opciones.
         private void BuildCharsList()
         {
-            allCharsList =string.Empty;
+            allCharsList = string.Empty;
             txtPassResult.Text = string.Empty;
 
             if (chkIncludeUpper.Checked)
                 allCharsList += upperCaseList;
             if (chkIncludeLower.Checked)
                 allCharsList += lowerList;
-            if (chkIncludeNumers.Checked)
+            if (chkIncludeNumbers.Checked)
                 allCharsList += numberList;
-            if (chkSymbols.Enabled)
+            if (chkSymbols.Checked)
                 allCharsList += symbolList;
 
             if (string.IsNullOrEmpty(allCharsList))
@@ -56,12 +56,34 @@ namespace PasswordGenerator
         }
 
 
+
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            BuildCharsList();
 
-            txtPassResult.Text = GeneratePassword(int.Parse(txtLength.Text));
 
+            try
+            {
+                BuildCharsList();
+
+                txtPassResult.Text = GeneratePassword(int.Parse(txtLength.Text));
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Information");
+            }
+
+
+        }
+
+        //controlar la entrada de solo números en txtLength
+        private void txtLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

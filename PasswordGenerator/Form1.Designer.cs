@@ -33,7 +33,7 @@
             label2 = new Label();
             chkIncludeUpper = new CheckBox();
             txtLength = new TextBox();
-            chkIncludeNumers = new CheckBox();
+            chkIncludeNumbers = new CheckBox();
             chkIncludeLower = new CheckBox();
             chkSymbols = new CheckBox();
             btnGenerate = new Button();
@@ -41,7 +41,7 @@
             // 
             // txtPassResult
             // 
-            txtPassResult.Enabled = false;
+            txtPassResult.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassResult.Location = new Point(194, 100);
             txtPassResult.Multiline = true;
             txtPassResult.Name = "txtPassResult";
@@ -87,19 +87,20 @@
             txtLength.Name = "txtLength";
             txtLength.Size = new Size(140, 30);
             txtLength.TabIndex = 4;
+            txtLength.KeyPress += txtLength_KeyPress;
             // 
-            // chkIncludeNumers
+            // chkIncludeNumbers
             // 
-            chkIncludeNumers.AutoSize = true;
-            chkIncludeNumers.CheckAlign = ContentAlignment.MiddleRight;
-            chkIncludeNumers.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
-            chkIncludeNumers.Location = new Point(756, 507);
-            chkIncludeNumers.Name = "chkIncludeNumers";
-            chkIncludeNumers.Size = new Size(168, 27);
-            chkIncludeNumers.TabIndex = 5;
-            chkIncludeNumers.Text = "Include Numbers";
-            chkIncludeNumers.TextAlign = ContentAlignment.MiddleRight;
-            chkIncludeNumers.UseVisualStyleBackColor = true;
+            chkIncludeNumbers.AutoSize = true;
+            chkIncludeNumbers.CheckAlign = ContentAlignment.MiddleRight;
+            chkIncludeNumbers.Font = new Font("Segoe UI", 9.134328F, FontStyle.Bold, GraphicsUnit.Point);
+            chkIncludeNumbers.Location = new Point(756, 507);
+            chkIncludeNumbers.Name = "chkIncludeNumbers";
+            chkIncludeNumbers.Size = new Size(168, 27);
+            chkIncludeNumbers.TabIndex = 5;
+            chkIncludeNumbers.Text = "Include Numbers";
+            chkIncludeNumbers.TextAlign = ContentAlignment.MiddleRight;
+            chkIncludeNumbers.UseVisualStyleBackColor = true;
             // 
             // chkIncludeLower
             // 
@@ -148,7 +149,7 @@
             Controls.Add(btnGenerate);
             Controls.Add(chkSymbols);
             Controls.Add(chkIncludeLower);
-            Controls.Add(chkIncludeNumers);
+            Controls.Add(chkIncludeNumbers);
             Controls.Add(txtLength);
             Controls.Add(chkIncludeUpper);
             Controls.Add(label2);
@@ -167,7 +168,7 @@
         private Label label2;
         private CheckBox chkIncludeUpper;
         private TextBox txtLength;
-        private CheckBox chkIncludeNumers;
+        private CheckBox chkIncludeNumbers;
         private CheckBox chkIncludeLower;
         private CheckBox chkSymbols;
         private Button btnGenerate;
